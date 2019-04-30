@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+        "train attack": {
+                "tasks": [
+                    {"ID": 0, "desc": "Kill # Chickens"},
+                    {"ID": 1, "desc": "Kill # Monks"},
+                    {"ID": 2, "desc": "Kill # Al-Kharid warriors"},
+                    {"ID": 3, "desc": "Kill # Barbarians"},
+                    {"ID": 4, "desc": "Kill # Hill Giants"},
+                    {"ID": 5, "desc": "Kill # Flesh Crawlers"},
+                    {"ID": 6, "desc": "Kill # Hobgoblins"},
+                    {"ID": 7, "desc": "Kill # Moss Giants"},
+                    {"ID": 8, "desc": "Kill # Ice Giants"},
+                    {"ID": 10, "desc": "Kill # Greater Demons"},
+                    {"ID": 11, "desc": "Kill # Green Dragons"},
+                    {"ID": 12, "desc": "Kill # Sand Crabs"},
+                    {"ID": 13, "desc": "Kill # Rock Crabs"},
+                    {"ID": 14, "desc": "COMPLETE # Rounds in the Nightmare Zone"},
+                    {"ID": 14, "desc": "Kill # monsters of equal combat level as yourself."}
+                ]
+            }
+        },
+        {
+        "train strength": {
+            "tasks": [
+                {"ID": 0, "desc": "Kill # Chickens"},
+                {"ID": 1, "desc": "Kill # Monks"},
+                {"ID": 2, "desc": "Kill # Al-Kharid warriors"},
+                {"ID": 3, "desc": "Kill # Barbarians"},
+                {"ID": 4, "desc": "Kill # Hill Giants"},
+                {"ID": 5, "desc": "Kill # Flesh Crawlers"},
+                {"ID": 6, "desc": "Kill # Hobgoblins"},
+                {"ID": 7, "desc": "Kill # Moss Giants"},
+                {"ID": 8, "desc": "Kill # Ice Giants"},
+                {"ID": 10, "desc": "Kill # Greater Demons"},
+                {"ID": 11, "desc": "Kill # Green Dragons"},
+                {"ID": 12, "desc": "Kill # Sand Crabs"},
+                {"ID": 13, "desc": "Kill # Rock Crabs"},
+                {"ID": 14, "desc": "COMPLETE # Rounds in the Nightmare Zone"},
+                {"ID": 14, "desc": "Kill # monsters of equal combat level as yourself."}
+            ]
+        }
+        }
+    ]
+}
