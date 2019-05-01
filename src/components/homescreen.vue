@@ -95,12 +95,8 @@
             </div>
         </div>
         <footer>
-            <p>
-                This is an Open Source Project - <a href="https://github.com/AllanOcelot/Runescape-Goals">Contribute Today!</a>
-            </p>
-            <p>
-                Made by <a href="http://allancodes.com" target="_blank">allanCodes</a>.
-            </p>
+            <p> This is an Open Source Project - <a href="https://github.com/AllanOcelot/Runescape-Goals">Contribute Today!</a> &nbsp; </p>
+            <p> Made by <a href="http://allancodes.com" target="_blank">allanCodes</a>. </p>
         </footer>
         <a class="donation_link" href="http://www.paypal.me/McKernan" target="_blank"><i class="fas fa-heart"></i> Please consider a donation <i class="fas fa-heart"></i> </a>
     </div>
