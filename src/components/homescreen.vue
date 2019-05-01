@@ -96,9 +96,11 @@
         </div>
         <footer>
             <p>
-            This is an Open Source Project - <a href="https://github.com/AllanOcelot/Runescape-Goals">Contribute Today!</a>
-            &nbsp; | &nbsp;
-            Made by <a href="http://allancodes.com" target="_blank">allanCodes</a>.
+                This is an Open Source Project - <a href="https://github.com/AllanOcelot/Runescape-Goals">Contribute Today!</a>
+            </p>
+            <p>
+                Made by <a href="http://allancodes.com" target="_blank">allanCodes</a>.
+            </p>
             </p>
         </footer>
         <a class="donation_link" href="http://www.paypal.me/McKernan" target="_blank"><i class="fas fa-heart"></i> Please consider a donation <i class="fas fa-heart"></i> </a>
@@ -128,7 +130,7 @@ export default {
         },
         methods: {
             generateBackground: function() {
-                this.backgroundNumber = Math.floor(Math.random(0) * Math.floor(6));
+                this.backgroundNumber = Math.floor(Math.random() * Math.floor(6)) + 1;
             },
             toggleLength: function(length) {
                 if (length === this.goalLength ){
@@ -506,6 +508,8 @@ export default {
         z-index: 100;
         padding: 10vh;
         box-sizing: border-box;
+        align-items: center;
+        -webkit-box-pack: center;
     }
 
 
@@ -559,11 +563,14 @@ export default {
         bottom: 0;
         z-index: 10;
         width: 100%;
+        padding: 5px 10px;
+        box-sizing: border-box;
         background-color: rgba(255,255,255,0.1);
         font-family: 'Catamaran', sans-serif;
     }
 
     footer p  {
+        display: inline-block;
         margin: 5px 0;
         font-size: 12px;
     }
@@ -603,5 +610,36 @@ export default {
         color: red;
     }
 
+
+    @media screen and (max-width: 700px){
+        .beta {
+            width: 100%;
+            border-radius: 0;
+        }
+        a.donation_link {
+            width: 260px;
+            top: 85px;
+            right: 50%;
+            margin-right: -130px;
+            box-sizing: border-box;
+        }
+        .flex-container .tools ul {
+            margin: 20px 0 0 0;
+        }
+        .flex-container .tools ul li {
+            margin-bottom: 20px;
+        }
+        footer p {
+            display: block;
+        }
+        .generateGoalButton {
+            margin-top: 20px;
+        }
+
+        /* Completed screen */
+        .complete-screen {
+            padding: 10px;
+        }
+    }
 
 </style>
