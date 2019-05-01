@@ -168,6 +168,7 @@ export default {
                 if(completed === true){
                     this.goalFocus = '';
                     this.goalLength = '';
+                    this.isValid = false;
                     this.goalCompleted = true;
                 }
                 this.goalDesc = '';
@@ -409,6 +410,7 @@ export default {
         font-family: 'Catamaran', sans-serif;
         margin: 30px auto 0 auto;
         cursor: not-allowed;
+        background-image: linear-gradient(#ffffff00,#ffffff00);
         transition: all 0.2s;
     }
     .generateGoalButton:hover {
@@ -417,12 +419,15 @@ export default {
     }
 
     .generateGoalButton.active {
-        background: #32af41;
+        background-image: linear-gradient(#67de76, #32af41);
         cursor: pointer;
         opacity: 1;
     }
-    .generateGoalButton.acitve:hover {
+    .generateGoalButton.active:hover {
         opacity: 1;
+        margin-top: 25px;
+        margin-bottom: 5px;
+        box-shadow: 0px 0 20px rgba(255,255,255,0.6);
     }
 
     /* The Goal */
@@ -475,11 +480,12 @@ export default {
         margin-top: 15px;
         font-family: 'Catamaran', sans-serif;
         margin: 30px auto 10px auto;
-        transition: all 0.2s;
+        background-image: linear-gradient(#ffffff00, #ffffff00);
+        transition: all 0.3s;
     }
 
     .goal_display .completed:hover {
-        background: #3fd651;
+        background-image: linear-gradient(#67de76, #32af41);
         cursor: pointer;
     }
 
