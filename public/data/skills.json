@@ -2,6 +2,7 @@
     "data": [
         {
         "train attack": {
+                "members_only": false,
                 "tasks": [
                     {"ID": 0, "desc": "Kill # Chickens"},
                     {"ID": 1, "desc": "Kill # Monks"},
@@ -23,6 +24,7 @@
         },
         {
         "train strength": {
+            "members_only": false,
             "tasks": [
                 {"ID": 0, "desc": "Kill # Chickens"},
                 {"ID": 1, "desc": "Kill # Monks"},
