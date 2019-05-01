@@ -13,11 +13,11 @@
                     <div class="tools" v-if="generatedGoal === false" >
                         <p>
                         I would like a
-                        <span class="button" v-bind:class="{ active: this.goalLength === 'short' }"
+                        <span class="button length" v-bind:class="{ active: this.goalLength === 'short' }"
                         v-on:click="toggleLength('short')">
                         Short</span>
                         /
-                        <span class="button" v-bind:class="{ active: this.goalLength === 'long' }"
+                        <span class="button length" v-bind:class="{ active: this.goalLength === 'long' }"
                         v-on:click="toggleLength('long')">
                         Long</span> term goal.
                         </p>
@@ -32,7 +32,7 @@
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="button" v-on:click="toggleFocus('skills')"
+                                    <span class="button working" v-on:click="toggleFocus('skills')"
                                             v-bind:class="{ active: this.goalFocus === 'skills' }"
                                     >
                                         <img src="/images/icon2.png" alt="Skills Icon"> Skills
@@ -96,7 +96,7 @@
         </div>
         <footer>
             <p>
-            This is an Open Source Project - <a href="http://www.test.com">Contribute Today!</a>
+            This is an Open Source Project - <a href="https://github.com/AllanOcelot/Runescape-Goals">Contribute Today!</a>
             &nbsp; | &nbsp;
             Made by <a href="http://allancodes.com" target="_blank">allanCodes</a>.
             </p>
@@ -128,7 +128,7 @@ export default {
         },
         methods: {
             generateBackground: function() {
-                this.backgroundNumber = Math.floor(Math.random() * Math.floor(6));
+                this.backgroundNumber = Math.floor(Math.random(0) * Math.floor(6));
             },
             toggleLength: function(length) {
                 if (length === this.goalLength ){
@@ -352,6 +352,19 @@ export default {
         line-height: normal;
         border-radius: 4px;
         transition: all 0.3s;
+
+        /* Short term, remove once all buttons function */
+        opacity: 0.3;
+    }
+
+    /* Buttons with class working, work */
+    .flex-container .tools span.button.working {
+        opacity: 1;
+    }
+
+    /* Make the length buttons fully visible, as they work  */
+    .flex-container .tools span.button.length {
+        opacity: 1;
     }
 
     .flex-container .tools span.button img {
@@ -369,6 +382,7 @@ export default {
         background: #32af41;
         color: #fff;
         border-radius: 4px;
+        opacity: 1;
     }
 
     .flex-container .tools span.button:hover {
