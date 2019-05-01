@@ -69,8 +69,8 @@
                         </div>
                     </div>
                     <div class="goal_display" v-else>
-                        <h2>Your current goal:</h2>
-                        <h3>{{this.goalTitle}}</h3>
+                        <h2>{{this.goalTitle}}</h2>
+                        <h3>{{this.goalSubTitle}}</h3>
                         <p>{{this.goalDesc}}</p>
                         <div class="completed" v-on:click="clearAll(true)">
                             <i class="fas fa-check"></i>
@@ -123,6 +123,7 @@ export default {
                 goalData: {},
                 generatedGoal: false,
                 goalTitle: '',
+                goalSubTitle: '',
                 goalDesc: '',
                 goalCompleted: false,
             }
@@ -189,11 +190,12 @@ export default {
                         // I.E Skills->Attack ( This is the 'subset')
                         var subset_name     =   Object.keys(self.goalData.data[sub_seed])[0];
                         var subset_data     =   self.goalData.data[sub_seed][subset_name].tasks;
-                        self.goalTitle = subset_name;
+
 
                         // Randomly Pick a task from the list
                         var taskID          =   Math.floor(Math.random() * Math.floor(subset_data.length));
                         var task            =   subset_data[taskID];
+                        var task_subtitle      =   self.goalData.data[sub_seed][subset_name].title;
                         var task_desc       =   task.desc;
 
                         //Check if our task contains an 'X' action.
@@ -209,7 +211,9 @@ export default {
                         }
 
                         //Return the task
-                        self.goalDesc = task_desc;
+                        self.goalTitle     = subset_name;
+                        self.goalSubTitle     = task_subtitle;
+                        self.goalDesc      = task_desc;
                         self.generatedGoal = true;
 
                     });

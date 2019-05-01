@@ -1,7 +1,7 @@
 {
-    "data": [
-        {
-        "train attack": {
+    "data": [{
+        "Attack": {
+                "title": "Use the pointy end!",
                 "members_only": false,
                 "tasks": [
                     {"ID": 0, "desc": "Kill # Chickens"},
@@ -23,7 +23,54 @@
             }
         },
         {
-        "train strength": {
+        "Strength": {
+                "title": "Strong as the wind!",
+                "members_only": false,
+                "tasks": [
+                    {"ID": 0, "desc": "Kill # Chickens"},
+                    {"ID": 1, "desc": "Kill # Monks"},
+                    {"ID": 2, "desc": "Kill # Al-Kharid warriors"},
+                    {"ID": 3, "desc": "Kill # Barbarians"},
+                    {"ID": 4, "desc": "Kill # Hill Giants"},
+                    {"ID": 5, "desc": "Kill # Flesh Crawlers"},
+                    {"ID": 6, "desc": "Kill # Hobgoblins"},
+                    {"ID": 7, "desc": "Kill # Moss Giants"},
+                    {"ID": 8, "desc": "Kill # Ice Giants"},
+                    {"ID": 10, "desc": "Kill # Greater Demons"},
+                    {"ID": 11, "desc": "Kill # Green Dragons"},
+                    {"ID": 12, "desc": "Kill # Sand Crabs"},
+                    {"ID": 13, "desc": "Kill # Rock Crabs"},
+                    {"ID": 14, "desc": "COMPLETE # Rounds in the Nightmare Zone"},
+                    {"ID": 14, "desc": "Kill # monsters of equal combat level as yourself."}
+                ]
+            }
+        },
+        {
+        "Defense": {
+                "title": "Deadmau5 Defense!",
+                "members_only": false,
+                "tasks": [
+                    {"ID": 0, "desc": "Kill # Chickens"},
+                    {"ID": 1, "desc": "Kill # Monks"},
+                    {"ID": 2, "desc": "Kill # Al-Kharid warriors"},
+                    {"ID": 3, "desc": "Kill # Barbarians"},
+                    {"ID": 4, "desc": "Kill # Hill Giants"},
+                    {"ID": 5, "desc": "Kill # Flesh Crawlers"},
+                    {"ID": 6, "desc": "Kill # Hobgoblins"},
+                    {"ID": 7, "desc": "Kill # Moss Giants"},
+                    {"ID": 8, "desc": "Kill # Ice Giants"},
+                    {"ID": 10, "desc": "Kill # Greater Demons"},
+                    {"ID": 11, "desc": "Kill # Green Dragons"},
+                    {"ID": 12, "desc": "Kill # Sand Crabs"},
+                    {"ID": 13, "desc": "Kill # Rock Crabs"},
+                    {"ID": 14, "desc": "COMPLETE # Rounds in the Nightmare Zone"},
+                    {"ID": 14, "desc": "Kill # monsters of equal combat level as yourself."}
+                ]
+            }
+        },
+        {
+        "Ranged": {
+            "title": "That still only counts as one!",
             "members_only": false,
             "tasks": [
                 {"ID": 0, "desc": "Kill # Chickens"},
@@ -41,8 +88,208 @@
                 {"ID": 13, "desc": "Kill # Rock Crabs"},
                 {"ID": 14, "desc": "COMPLETE # Rounds in the Nightmare Zone"},
                 {"ID": 14, "desc": "Kill # monsters of equal combat level as yourself."}
-            ]
-        }
-        }
-    ]
+                ]
+            }
+        },
+        {
+        "Prayer": {
+            "title": "Lord, give me strength!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Kill # Chickens"},
+                {"ID": 1, "desc": "Kill # Monks"},
+                {"ID": 2, "desc": "Kill # Al-Kharid warriors"},
+                {"ID": 3, "desc": "Kill # Barbarians"},
+                {"ID": 4, "desc": "Kill # Hill Giants"},
+                {"ID": 5, "desc": "Kill # Flesh Crawlers"},
+                {"ID": 6, "desc": "Kill # Hobgoblins"},
+                {"ID": 7, "desc": "Kill # Moss Giants"},
+                {"ID": 8, "desc": "Kill # Ice Giants"},
+                {"ID": 10, "desc": "Kill # Greater Demons"},
+                {"ID": 11, "desc": "Kill # Green Dragons"},
+                {"ID": 12, "desc": "Kill # Sand Crabs"},
+                {"ID": 13, "desc": "Kill # Rock Crabs"},
+                {"ID": 14, "desc": "COMPLETE # Rounds in the Nightmare Zone"},
+                {"ID": 14, "desc": "Kill # monsters of equal combat level as yourself."}
+                ]
+            }
+        },
+        {
+        "Magic": {
+            "title": "Abracadabra!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Kill # Chickens"},
+                {"ID": 1, "desc": "Kill # Monks"},
+                {"ID": 2, "desc": "Kill # Al-Kharid warriors"},
+                {"ID": 3, "desc": "Kill # Barbarians"},
+                {"ID": 4, "desc": "Kill # Hill Giants"},
+                {"ID": 5, "desc": "Kill # Flesh Crawlers"},
+                {"ID": 6, "desc": "Kill # Hobgoblins"},
+                {"ID": 7, "desc": "Kill # Moss Giants"},
+                {"ID": 8, "desc": "Kill # Ice Giants"},
+                {"ID": 10, "desc": "Kill # Greater Demons"},
+                {"ID": 11, "desc": "Kill # Green Dragons"},
+                {"ID": 12, "desc": "Kill # Sand Crabs"},
+                {"ID": 13, "desc": "Kill # Rock Crabs"},
+                {"ID": 14, "desc": "COMPLETE # Rounds in the Nightmare Zone"},
+                {"ID": 14, "desc": "Kill # monsters of equal combat level as yourself."}
+                ]
+            }
+        },
+        {
+        "Runecrafting": {
+            "title": "Not called Runescape for nuthin'",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Craft # Nature Runes"}
+                ]
+            }
+        },
+        {
+        "Hitpoints": {
+            "title": "Don't go breaking my heart",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Fight # Sandcrabs"}
+                ]
+            }
+        },
+        {
+        "Crafting": {
+            "title": "Get Crafty!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Make # leather boots"}
+                ]
+            }
+        },
+        {
+        "Mining": {
+            "title": "Mine(d) yourself!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Kill # Chickens"}
+                ]
+            }
+        },
+        {
+        "Smithing": {
+            "title": "Diggy Diggy Dwarf!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Smith # Black Longswords"}
+                ]
+            }
+        },
+        {
+        "Fishing": {
+            "title": "Go get wet!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Fish for # Trout"}
+                ]
+            }
+        },
+        {
+        "Cooking": {
+            "title": "Get in MY BELLY!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Cook # Lobsters"}
+                ]
+            }
+        },
+        {
+        "Firemaking": {
+            "title": "It's getting hot in here",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Burn # Logs ( Normal )"}
+                ]
+            }
+        },
+        {
+        "Woodcutting": {
+            "title": "Watch out for Ents!",
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Chop down # Trees"}
+                ]
+            }
+        },
+        {
+        "Agility": {
+            "title": "GOTTA GO FAST!",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Complete the gnome agility course # times"}
+                ]
+            }
+        },
+        {
+        "Herblore": {
+            "title": "The key is to roll it tight...",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Clean # Grimy Guam"}
+                ]
+            }
+        },
+        {
+        "Thieving": {
+            "title": "Stop there, sneak theif!",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Pickpocket # Man/Women"}
+                ]
+            }
+        },
+        {
+        "Fletching": {
+            "title": "The Hardest 99 - Everyone",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Fletch # Arrowshafts"}
+                ]
+            }
+        },
+        {
+        "Slayer": {
+            "title": "Raining Blood is a tune though...",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Destroy # Aberrant Spectres"}
+                ]
+            }
+        },
+        {
+        "Farming": {
+            "title": "Feed me Seymour, feed me! ",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Harvest # Potato's"}
+                ]
+            }
+        },
+        {
+        "Construction": {
+            "title": "Can we fix it!? NOT A CHANCE!",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Throw a house party with # people."}
+                ]
+            }
+        },
+        {
+        "Hunter": {
+            "title": "Remember when I said I'd kill you last? I lied.",
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Catch # Polar Kebbits"}
+                ]
+            }
+        },
+        {
+    }]
 }
