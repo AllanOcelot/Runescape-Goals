@@ -1,0 +1,172 @@
+{
+    "data": [{
+        "Barbarian Assult": {
+            "title": "Kill Monsters, get loot?",
+            "safe": true,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Complete Barbarian Assult 10 times in one sitting"}
+                ]
+            }
+        },
+        {
+        "Barrows": {
+            "title": "Can you kill the brothers?",
+            "safe": false,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Complete one set of Barrows Armour"}
+                ]
+            }
+        },
+        {
+        "Bounty Hunter": {
+            "title": "I will find you, I will kill you.",
+            "safe": false,
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Use equipment worth a minimum of 1m GP"}
+                ]
+            }
+        },
+        {
+        "Burgh de Rott": {
+            "title": "What's that smell?",
+            "safe": false,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Complete this Minigame once everyday, for a week"}
+                ]
+            }
+        },
+        {
+        "Castle Wars": {
+            "title": "Bring out your dead!",
+            "safe": true,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Win five games, using only range gear"}
+                ]
+            }
+        },
+        {
+        "Champion's Challenge": {
+            "title": "Live to win.",
+            "safe": false,
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Defeat all Champions, once."}
+                ]
+            }
+        },
+        {
+        "Chambers of Xeric": {
+            "title": "Did you bring a light?",
+            "safe": true,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Complete, with a full team"}
+                ]
+            }
+        },
+        {
+        "Clan Wars": {
+            "title": "Eastside is the best...",
+            "safe": true,
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Convince a player from the opposing clan, to join your team, and win."}
+                ]
+            }
+        },
+        {
+        "Duel Arean": {
+            "title": "I hate sand, it's coarse and it gets everywhere",
+            "safe": true,
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Defeat your opponent using only poison"}
+                ]
+            }
+        },
+        {        "Mage Arena": {
+            "title": "Mages - the gathering",
+            "safe": false,
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Using only windblast, win"}
+                ]
+            }
+        },
+        {
+        "Nightmare Zone": {
+            "title": "Take a visit to Elm Street",
+            "safe": true,
+            "members_only": false,
+            "tasks": [
+                {"ID": 0, "desc": "Defeat the highest boss you can, # times."}
+                ]
+            }
+        },
+        {
+        "Pest Control": {
+            "title": "Popular when I were a lad",
+            "safe": true,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Attain all the special wearable clothing"}
+                ]
+            }
+        },
+        {
+        "Temple Trekking": {
+            "title": "What's that smell?",
+            "safe": false,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Complete, using no food"}
+                ]
+            }
+        },
+        {
+        "Theatre of blood": {
+            "title": "Another name for Manchester on a Friday night",
+            "safe": false,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Carry three low level team members"}
+                ]
+            }
+        },
+        {
+        "TzHaar Fight Cave": {
+            "title": "Lava? Is this Minecraft",
+            "safe": true,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Be last man standing, consume no food, nor potions"}
+                ]
+            }
+        },
+        {
+        "Last Man Standing": {
+            "title": "Hello [PLAYERUNKNOWN]",
+            "safe": false,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Negotiate a pact of non-aggression with another player, and kill them"}
+                ]
+            }
+        },
+        {
+        "Inferno": {
+            "title": "Buy your cape at the Thrift Shop",
+            "safe": true,
+            "members_only": true,
+            "tasks": [
+                {"ID": 0, "desc": "Win"},
+                {"ID": 1, "desc": "Brag about your cape to # low level (-30) players, it only counts if they respond."}
+                ]
+        }
+    }]
+}

@@ -39,7 +39,7 @@
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="button" v-on:click="toggleFocus('minigames')"
+                                    <span class="button working" v-on:click="toggleFocus('minigames')"
                                             v-bind:class="{ active: this.goalFocus === 'minigames' }"
                                     >
                                         <img src="/images/icon3.png" alt="Minigame Icon"> Minigames
