@@ -1,4 +1,4 @@
-# Runescape Goals
+# [Runescape Goals](http://www.runescapegoals.com)
 An online tool to generate fun tasks to complete in the game 'Old School Runescape'.
 
 ## Why?
