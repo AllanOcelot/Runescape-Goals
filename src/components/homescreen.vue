@@ -106,16 +106,22 @@
             <p> Made by <a href="http://allancodes.com" target="_blank">allanCodes</a>. </p>
         </footer>
         <a class="donation_link" href="http://www.paypal.me/McKernan" target="_blank"><i class="fas fa-heart"></i> Please consider a donation <i class="fas fa-heart"></i> </a>
+
+        <runescapeTwitchChannels />
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+import runescapeTwitchChannels from './runescapeTwitchChannels.vue';
 
 export default {
         name: 'homescreen',
         props: {
             msg: String
+        },
+        components: {
+            runescapeTwitchChannels
         },
         data: function() {
             return {
@@ -288,7 +294,7 @@ export default {
         z-index: 1;
     }
 
-    .flex-container .content {
+    .content {
         position: relative;
         color: #fff;
         z-index: 2;
@@ -296,112 +302,118 @@ export default {
 
 
     /* Title */
-    .flex-container .title {
+    .title {
         position: relative;
         margin-bottom: 40px;
-    }
-    .flex-container .title h1 {
-        font-family: 'Catamaran', sans-serif;
-        padding: 0;
-        margin: 0;
-        font-size: 2.4em;
-    }
-    .flex-container .title p {
-        position: relative;
-        padding: 0;
-        margin: 0 auto;
-        width: 160px;
-    }
-    .flex-container .title p::before,
-    .flex-container .title p::after {
-        content: "";
-        position: absolute;
-        left: -65px;
-        top: 8px;
-        width: 55px;
-        height: 1px;
-        background: #fff;
-        opacity: 0.8;
-        z-index: 1;
-    }
-    .flex-container .title p::after {
+        h1 {
+            font-family: 'Catamaran', sans-serif;
+            padding: 0;
+            margin: 0;
+            font-size: 2.4em;
+        }
+        p {
+            position: relative;
+            padding: 0;
+            margin: 0 auto;
+            width: 160px;
+        }
+        p::before,
+        p::after {
+            content: "";
+            position: absolute;
+            left: -65px;
+            top: 8px;
+            width: 55px;
+            height: 1px;
+            background: #fff;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        p::after {
         left: auto;
         right: -65px;
+        }
     }
+    
 
 
     /* The goal tools */
-    .flex-container .tools p {
-        margin: 0 0 10px 0;
-        cursor: default;
-    }
+    .flex-container .tools {
+        p {
+            margin: 0 0 10px 0;
+            cursor: default;
+        }
 
-    .flex-container .tools ul {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 15px 0 20px 0;
-        padding: 0;
-    }
+        ul {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 15px 0 20px 0;
+            padding: 0;
 
-    .flex-container .tools ul li {
-        list-style: none;
-        display: inline-block;
-    }
+            li {
+                list-style: none;
+                display: inline-block;
+            }
+        }
 
-    .flex-container .tools span.button {
-        position: relative;
-        z-index: 10;
-        padding: 2px 12px;
-        margin: 0 5px;
-        cursor: pointer;
-        background: none;
-        border: 1px solid #fff;
-        color: #fff;
-        font-family: 'Catamaran', sans-serif;
-        font-weight: 400;
-        line-height: normal;
-        border-radius: 4px;
-        transition: all 0.3s;
+        span.button {
+            position: relative;
+            z-index: 10;
+            padding: 2px 12px;
+            margin: 0 5px;
+            cursor: pointer;
+            background: none;
+            border: 1px solid #fff;
+            color: #fff;
+            font-family: 'Catamaran', sans-serif;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 4px;
+            transition: all 0.3s;
 
-        /* Short term, remove once all buttons function */
-        opacity: 0.3;
-    }
+            /* Short term, remove once all buttons function */
+            opacity: 0.3;
 
-    @media screen and (max-width: 850px){
-        .flex-container .tools span.button {
-            padding: 0px 6px;
+            /* Buttons with class working, work */
+            &.working {
+                opacity: 1;
+            }
+
+            /* Make the length buttons fully visible, as they work  */
+            &.length {
+                opacity: 1;
+            }
+
+            img {
+                position: relative;
+                top: 2px;
+            }
+
+            &:hover {
+                cursor: not-allowed;
+            }
+
+            &.active,
+            &.active:hover,
+            &.working:hover {
+                cursor: pointer;
+                background: #32af41;
+                color: #fff;
+                border-radius: 4px;
+                opacity: 1;
+            }
+        }
+
+        @media screen and (max-width: 850px){
+            span.button {
+                padding: 0px 6px;
+            }
         }
     }
+    
 
-    /* Buttons with class working, work */
-    .flex-container .tools span.button.working {
-        opacity: 1;
-    }
 
-    /* Make the length buttons fully visible, as they work  */
-    .flex-container .tools span.button.length {
-        opacity: 1;
-    }
-
-    .flex-container .tools span.button img {
-        position: relative;
-        top: 2px;
-    }
-
-    .flex-container .tools span.button:hover {
-        cursor: not-allowed;
-    }
-
-    .flex-container .tools span.button.active,
-    .flex-container .tools span.button.active:hover,
-    .flex-container .tools span.button.working:hover {
-        cursor: pointer;
-        background: #32af41;
-        color: #fff;
-        border-radius: 4px;
-        opacity: 1;
-    }
 
     /* Generate Goal Button -- Disabled until user fills out questions */
     .generateGoalButton {
@@ -423,21 +435,23 @@ export default {
         cursor: not-allowed;
         background-image: linear-gradient(#ffffff00,#ffffff00);
         transition: all 0.2s;
-    }
-    .generateGoalButton:hover {
-        cursor: not-allowed;
-        opacity: 0.6;
+
+        &:hover {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        &.active {
+            cursor: pointer;
+            opacity: 1;
+            &:hover {
+                opacity: 1;
+                background: #32af41;
+                color: #fff;
+            }
+        }
     }
 
-    .generateGoalButton.active {
-        cursor: pointer;
-        opacity: 1;
-    }
-    .generateGoalButton.active:hover {
-        opacity: 1;
-        background: #32af41;
-        color: #fff;
-    }
+
 
     /* The Goal */
     .goal_display {
@@ -462,74 +476,75 @@ export default {
         flex-direction: column;
         width: 400px;
         height: 400px;
-    }
 
-    .goal_display h2 {
-        display: block;
-        width: 100%;
-        font-size: 1.6em;
-        margin: 0 0 10px 0;
-        padding: 0;
-        font-family: 'Catamaran', sans-serif;
-        cursor: default;
-    }
+        h2 {
+            display: block;
+            width: 100%;
+            font-size: 1.6em;
+            margin: 0 0 10px 0;
+            padding: 0;
+            font-family: 'Catamaran', sans-serif;
+            cursor: default;
+        }
 
-    .goal_display h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        cursor:default;
-        text-transform: capitalize;
-    }
+        h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            cursor:default;
+            text-transform: capitalize;
+        }
 
-    .goal_display p {
-        margin: 0;
-        line-height: 24px;
-        font-size: 14px;
-        padding: 0 20px;
-        cursor: default;
-    }
+        p {
+            margin: 0;
+            line-height: 24px;
+            font-size: 14px;
+            padding: 0 20px;
+            cursor: default;
+        }
 
-    .goal_display .completed {
-        height: 40px;
-        padding: 0 10px;
-        box-sizing: border-box;
-        line-height: 40px;
-        letter-spacing: 1px;
-        border-radius: 0;
-        border: none;
-        background: transparent;
-        border: 1px solid #fff;
-        text-shadow: none;
-        border-radius: 4px;
-        color: #fff;
-        font-size: 1em;
-        font-weight: 400;
-        margin-top: 15px;
-        font-family: 'Catamaran', sans-serif;
-        margin: 30px auto 10px auto;
-        transition: all 0.3s;
-    }
+        .completed {
+            height: 40px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            line-height: 40px;
+            letter-spacing: 1px;
+            border-radius: 0;
+            border: none;
+            background: transparent;
+            border: 1px solid #fff;
+            text-shadow: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1em;
+            font-weight: 400;
+            margin-top: 15px;
+            font-family: 'Catamaran', sans-serif;
+            margin: 30px auto 10px auto;
+            transition: all 0.3s;
 
-    .goal_display .completed:hover {
-        background: #32af41;
-        color: #fff;
-        cursor: pointer;
-    }
+            &:hover {
+                background: #32af41;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
 
-    .goal_display .back {
-        position: relative;
-        bottom: -8px;
-        left: 0px;
-        text-align: center;
-        width: 100%;
-        width: 300px;
-        font-size: 13px;
-        text-shadow: none;
-        color: #fff;
-        cursor: pointer;
-    }
-    .goal_display .back:hover {
-        text-decoration: underline;
+        .back {
+            position: relative;
+            bottom: -8px;
+            left: 0px;
+            text-align: center;
+            width: 100%;
+            width: 300px;
+            font-size: 13px;
+            text-shadow: none;
+            color: #fff;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
     }
 
     /* Completed screen */
@@ -547,45 +562,44 @@ export default {
         flex-direction: column;
         align-content: center;
         justify-content: center;
+
+        h1 {
+            font-size: 3em;
+            letter-spacing: 2px;
+        }
+        
+        p {
+            font-size: 1.3em;
+        }
+
+        .close {
+            width: 200px;
+            margin: 0 auto;
+            line-height: 54px;
+            height: 50px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 6px;
+            border: 2px solid #fff;
+            transition: all 0.2s;
+            i {
+                position: relative;
+                margin: 0 5px;
+                top: 4px;
+                font-size: 1.5em;
+            }
+
+            &:hover {
+                background: #fff;
+                color: #040204;
+                cursor: pointer;
+            }
+        }
+
     }
 
-
-    .completed-screen h1 {
-        font-size: 3em;
-        letter-spacing: 2px;
-    }
-
-    .completed-screen p {
-        font-size: 1.3em;
-    }
-
-    .completed-screen .close {
-        width: 200px;
-        margin: 0 auto;
-        line-height: 54px;
-        height: 50px;
-        font-size: 1.2em;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-radius: 6px;
-        border: 2px solid #fff;
-        transition: all 0.2s;
-    }
-
-    .completed-screen .close:hover {
-        background: #fff;
-        color: #040204;
-        cursor: pointer;
-    }
-
-    .completed-screen .close i {
-        position: relative;
-        margin: 0 5px;
-        top: 4px;
-        font-size: 1.5em;
-    }
-
-    .completed-screen .completed-dance {
+    .completed-dance {
         display: block;
         width: 100%;
         height: 300px;
@@ -596,25 +610,25 @@ export default {
 
     /* Footer */
     footer {
-        position: fixed;
-        bottom: 0;
-        z-index: 10;
-        width: 100%;
-        padding: 5px 10px;
-        box-sizing: border-box;
-        background-color: rgba(255,255,255,0.1);
-        font-family: 'Catamaran', sans-serif;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,0.1);
+    font-family: 'Catamaran', sans-serif;
+        p  {
+            display: inline-block;
+            margin: 5px 0;
+            font-size: 12px;
+            a {
+                color: #fff;
+            }
+        }
     }
 
-    footer p  {
-        display: inline-block;
-        margin: 5px 0;
-        font-size: 12px;
-    }
 
-    footer p a {
-        color: #fff;
-    }
 
     a.donation_link {
         position: fixed;
@@ -630,21 +644,20 @@ export default {
         border-radius: 14px;
         opacity: 0.8;
         transition: all 0.2s;
-    }
 
-    a.donation_link i {
-        margin: 0 5px;
-        position: relative;
-        top: 1px;
-        transition: all 0.3s;
-    }
-
-    a.donation_link:hover {
-        opacity: 1;
-    }
-
-    a.donation_link:hover i {
-        color: red;
+        i {
+            margin: 0 5px;
+            position: relative;
+            top: 1px;
+            transition: all 0.3s;
+            
+        }
+        &:hover {
+            opacity: 1;
+            i {
+                color: red;
+            }
+        }
     }
 
 
