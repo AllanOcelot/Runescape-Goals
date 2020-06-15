@@ -1,99 +1,106 @@
 <template>
     <div class="page-container">
-        <div class="flex-container" v-bind:style="{ backgroundImage: 'url(/images/bg/' + backgroundNumber + '.png)' }">
-            <div class="wrapper">
-                <div class="beta">
-                    Alpha Build
-                </div>
-                <div class="content">
-                    <div class="title">
-                        <h1>Runescape Goals</h1>
-                        <p>Everything is progress</p>
+        <transition name="slide-left" mode="in-out">
+            <div class="flex-container"
+             v-bind:style="{ backgroundImage: 'url(/images/bg/' + backgroundNumber + '.png)' }">
+                <div class="wrapper">
+                    <div class="beta">
+                        Alpha Build
                     </div>
-                    <div class="tools" v-if="generatedGoal === false" >
-                        <p>
-                        I would like a
-                        <span class="button length" v-bind:class="{ active: this.goalLength === 'short' }"
-                        v-on:click="toggleLength('short')">
-                        Short</span>
-                        /
-                        <span class="button length" v-bind:class="{ active: this.goalLength === 'long' }"
-                        v-on:click="toggleLength('long')">
-                        Long</span> term goal.
-                        </p>
-                        <br>
-                        <p>I would like my goal to focus on:
-                            <ul>
-                                <li>
-                                    <span class="button" v-on:click="toggleFocus('quests')"
-                                            v-bind:class="{ active: this.goalFocus === 'quests' }"
-                                    >
-                                        <img src="/images/icon1.png" alt="quest icon"> Quests
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="button working" v-on:click="toggleFocus('skills')"
-                                            v-bind:class="{ active: this.goalFocus === 'skills' }"
-                                    >
-                                        <img src="/images/icon2.png" alt="Skills Icon"> Skills
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="button working" v-on:click="toggleFocus('minigames')"
-                                            v-bind:class="{ active: this.goalFocus === 'minigames' }"
-                                    >
-                                        <img src="/images/icon3.png" alt="Minigame Icon"> Minigames
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="button" v-on:click="toggleFocus('combat')"
-                                          v-bind:class="{ active: this.goalFocus === 'combat' }"
-                                    >
-                                        <img src="/images/icon4.png" alt="Combat icon"> Combat
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="button" v-on:click="toggleFocus('strange')"
-                                            v-bind:class="{ active: this.goalFocus === 'strange' }"
-                                    >
-                                        <img src="/images/icon5.png" alt="Something Strange icon"> Something Strange...
-                                    </span>
-                                </li>
-                            </ul>
-                        </p>
-                        <div type="button" name="button"
-                            v-on:click="generateGoal()"
-                            v-bind:class="{ active: this.isValid }"
-                            class="generateGoalButton">
-                            Generate My Goal!
-                        </div>
-                    </div>
-                    <div class="goal_display" v-else>
-                        <h2>{{this.goalTitle}}</h2>
-                        <h3>{{this.goalSubTitle}}</h3>
-                        <p>{{this.goalDesc}}</p>
-                        <div class="completed" v-on:click="clearAll(true)">
-                            <i class="fas fa-check"></i>
-                            I have completed this!
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <p class="back" v-on:click="clearAll()">
-                            I don't want this goal, let me try again!
-                        </p>
+                    <div class="content">
+                            <div class="title" v-if="generatedGoal === false">
+                                <h1>Runescape Goals</h1>
+                                <p>Everything is progress</p>
+                            </div>
+                            <div class="tools" v-if="generatedGoal === false" >
+                                <p>
+                                I would like a
+                                <span class="button working length" v-bind:class="{ active: this.goalLength === 'short' }"
+                                v-on:click="toggleLength('short')">
+                                Short</span>
+                                /
+                                <span class="button working length" v-bind:class="{ active: this.goalLength === 'long' }"
+                                v-on:click="toggleLength('long')">
+                                Long</span> term goal.
+                                </p>
+                                <br>
+                                <p>I would like my goal to focus on:
+                                    <ul>
+                                        <li>
+                                            <span class="button"
+                                                    v-bind:class="{ active: this.goalFocus === 'quests' }"
+                                            >
+                                                <img src="/images/icon1.png" alt="quest icon"> Quests
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="button working" v-on:click="toggleFocus('skills')"
+                                                    v-bind:class="{ active: this.goalFocus === 'skills' }"
+                                            >
+                                                <img src="/images/icon2.png" alt="Skills Icon"> Skills
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="button working" v-on:click="toggleFocus('minigames')"
+                                                    v-bind:class="{ active: this.goalFocus === 'minigames' }"
+                                            >
+                                                <img src="/images/icon3.png" alt="Minigame Icon"> Minigames
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="button"
+                                                v-bind:class="{ active: this.goalFocus === 'combat' }"
+                                            >
+                                                <img src="/images/icon4.png" alt="Combat icon"> Combat
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="button"
+                                                    v-bind:class="{ active: this.goalFocus === 'strange' }"
+                                            >
+                                                <img src="/images/icon5.png" alt="Something Strange icon"> Something Strange...
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </p>
+                                <div type="button" name="button"
+                                    v-on:click="generateGoal()"
+                                    v-bind:class="{ active: this.isValid }"
+                                    class="generateGoalButton">
+                                    Generate My Goal!
+                                </div>
+                            </div>
+                        <transition name="fade">
+                            <div class="goal_display" v-if="generatedGoal === true">
+                                <h2>{{this.goalTitle}}</h2>
+                                <h3>{{this.goalSubTitle}}</h3>
+                                <p>{{this.goalDesc}}</p>
+                                <div class="completed" v-on:click="clearAll(true)">
+                                    <i class="fas fa-check"></i>
+                                    I have completed this!
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <p class="back" v-on:click="clearAll()">
+                                    I don't want this goal, let me try again!
+                                </p>
+                            </div>
+                        </transition>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="completed-screen" v-if="goalCompleted">
-            <h1>CONGRATULATIONS</h1>
-            <div class="completed-dance"></div>
-            <p>Well done! Now go do something productive!</p>
-            <div class="close" v-on:click="goalCompleted = false">
-                <i class="fas fa-times"></i>
-                Close
-                <i class="fas fa-times"></i>
+        </transition>
+        <transition name="fade">
+            <div class="completed-screen" v-if="goalCompleted">
+                <h1>CONGRATULATIONS</h1>
+                <div class="completed-dance"></div>
+                <p>Well done! Now go do something productive!</p>
+                <div class="close" v-on:click="goalCompleted = false">
+                    <i class="fas fa-times"></i>
+                    Close
+                    <i class="fas fa-times"></i>
+                </div>
             </div>
-        </div>
+        </transition>
         <footer>
             <p> This is an Open Source Project - <a href="https://github.com/AllanOcelot/Runescape-Goals">Contribute Today!</a> &nbsp; </p>
             <p> Made by <a href="http://allancodes.com" target="_blank">allanCodes</a>. </p>
@@ -167,6 +174,8 @@ export default {
                     this.isValid = false;
                     this.goalCompleted = true;
                 }
+                this.goalFocus = '';
+                this.goalLength = '';
                 this.goalDesc = '';
                 this.generatedGoal = false;
             },
@@ -191,7 +200,7 @@ export default {
                         // Randomly Pick a task from the list
                         var taskID          =   Math.floor(Math.random() * Math.floor(subset_data.length));
                         var task            =   subset_data[taskID];
-                        var task_subtitle      =   self.goalData.data[sub_seed][subset_name].title;
+                        var task_subtitle   =   self.goalData.data[sub_seed][subset_name].title;
                         var task_desc       =   task.desc;
 
                         //Check if our task contains an 'X' action.
@@ -223,7 +232,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
 
     .beta {
         position: fixed;
@@ -359,6 +368,12 @@ export default {
         opacity: 0.3;
     }
 
+    @media screen and (max-width: 850px){
+        .flex-container .tools span.button {
+            padding: 0px 6px;
+        }
+    }
+
     /* Buttons with class working, work */
     .flex-container .tools span.button.working {
         opacity: 1;
@@ -374,21 +389,18 @@ export default {
         top: 2px;
     }
 
+    .flex-container .tools span.button:hover {
+        cursor: not-allowed;
+    }
+
     .flex-container .tools span.button.active,
     .flex-container .tools span.button.active:hover,
-    .flex-container .tools span.button:hover{
-        padding: 5px 15px;
-        margin: 0 5px;
+    .flex-container .tools span.button.working:hover {
         cursor: pointer;
-        border: 1px solid #fff;
         background: #32af41;
         color: #fff;
         border-radius: 4px;
         opacity: 1;
-    }
-
-    .flex-container .tools span.button:hover {
-        background-color: transparent;
     }
 
     /* Generate Goal Button -- Disabled until user fills out questions */
@@ -418,31 +430,38 @@ export default {
     }
 
     .generateGoalButton.active {
-        background-image: linear-gradient(#67de76, #32af41);
         cursor: pointer;
         opacity: 1;
     }
     .generateGoalButton.active:hover {
         opacity: 1;
-        margin-top: 25px;
-        margin-bottom: 5px;
-        box-shadow: 0px 0 20px rgba(255,255,255,0.6);
+        background: #32af41;
+        color: #fff;
     }
 
     /* The Goal */
     .goal_display {
-        padding: 30px 60px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin-left: -200px;
+        margin-top: -200px;
+        padding: 20px;
         background-image: url('/images/goal_bg.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         color: #faff00;
         text-shadow: 2px 2px 0px rgba(0,0,0,0.6);
-        width: 400px;
-        height: 300px;
+        height: auto;
         box-sizing: border-box;
-        padding: 40px 70px;
         z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        height: 400px;
     }
 
     .goal_display h2 {
@@ -452,20 +471,29 @@ export default {
         margin: 0 0 10px 0;
         padding: 0;
         font-family: 'Catamaran', sans-serif;
+        cursor: default;
     }
 
     .goal_display h3 {
         margin-top: 0;
+        margin-bottom: 10px;
+        cursor:default;
         text-transform: capitalize;
     }
 
     .goal_display p {
         margin: 0;
+        line-height: 24px;
+        font-size: 14px;
+        padding: 0 20px;
+        cursor: default;
     }
 
     .goal_display .completed {
-        height: 33px;
-        line-height: 35px;
+        height: 40px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        line-height: 40px;
         letter-spacing: 1px;
         border-radius: 0;
         border: none;
@@ -479,21 +507,23 @@ export default {
         margin-top: 15px;
         font-family: 'Catamaran', sans-serif;
         margin: 30px auto 10px auto;
-        background-image: linear-gradient(#ffffff00, #ffffff00);
         transition: all 0.3s;
     }
 
     .goal_display .completed:hover {
-        background-image: linear-gradient(#67de76, #32af41);
+        background: #32af41;
+        color: #fff;
         cursor: pointer;
     }
 
     .goal_display .back {
         position: relative;
         bottom: -8px;
-        left: -20px;
+        left: 0px;
+        text-align: center;
+        width: 100%;
         width: 300px;
-        font-size: 0.9em;
+        font-size: 13px;
         text-shadow: none;
         color: #fff;
         cursor: pointer;
@@ -507,14 +537,16 @@ export default {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         background: #040204;
         z-index: 100;
-        padding: 10vh;
+        padding: 20px;
         box-sizing: border-box;
-        align-items: center;
-        -webkit-box-pack: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
     }
 
 
@@ -646,5 +678,12 @@ export default {
             padding: 10px;
         }
     }
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .6s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
 
 </style>
